@@ -1,0 +1,240 @@
+
+=== CampusNet - Programación III - Angie Valeria Puentes Garcia ===
+
+=== 1. Construcción del grafo dirigido ===
+[OK] Usuario agregado: U01 (Ana, Estudiante).
+[OK] Usuario agregado: U02 (Bruno, Profesor).
+[OK] Usuario agregado: U03 (Camila, Egresado).
+[OK] Usuario agregado: U04 (Diego, Estudiante).
+[OK] Usuario agregado: U05 (Elena, Profesor).
+[OK] Usuario agregado: U06 (Felipe, Egresado).
+[OK] Usuario agregado: U07 (Gabriela, Estudiante).
+[OK] Usuario agregado: U08 (Hugo, Profesor).
+[OK] Usuario agregado: U09 (Isabel, Egresado).
+[OK] Usuario agregado: U10 (Julián, Estudiante).
+[OK] Usuario agregado: U11 (Karen, Profesor).
+[OK] Usuario agregado: U12 (Luis, Egresado).
+[OK] Relación agregada: U01 -> U02.
+[OK] Relación agregada: U01 -> U03.
+[OK] Relación agregada: U01 -> U04.
+[OK] Relación agregada: U01 -> U05.
+[OK] Relación agregada: U02 -> U03.
+[OK] Relación agregada: U02 -> U04.
+[OK] Relación agregada: U02 -> U05.
+[OK] Relación agregada: U02 -> U06.
+[OK] Relación agregada: U03 -> U01.
+[OK] Relación agregada: U03 -> U07.
+[OK] Relación agregada: U04 -> U05.
+[OK] Relación agregada: U04 -> U08.
+[OK] Relación agregada: U05 -> U06.
+[OK] Relación agregada: U06 -> U07.
+[OK] Relación agregada: U07 -> U08.
+[OK] Relación agregada: U08 -> U09.
+[OK] Relación agregada: U09 -> U10.
+[OK] Relación agregada: U10 -> U05.
+[OK] Relación agregada: U11 -> U02.
+U01 | Ana | Estudiante -> [U02, U03, U04, U05]
+U02 | Bruno | Profesor -> [U03, U04, U05, U06]
+U03 | Camila | Egresado -> [U01, U07]
+U04 | Diego | Estudiante -> [U05, U08]
+U05 | Elena | Profesor -> [U06]
+U06 | Felipe | Egresado -> [U07]
+U07 | Gabriela | Estudiante -> [U08]
+U08 | Hugo | Profesor -> [U09]
+U09 | Isabel | Egresado -> [U10]
+U10 | Julián | Estudiante -> [U05]
+U11 | Karen | Profesor -> [U02]
+U12 | Luis | Egresado -> []
+Vértices: 12; aristas: 19; densidad dirigida: 0,1439
+U01: entrada=1, salida=4
+U02: entrada=2, salida=4
+U03: entrada=2, salida=2
+U04: entrada=2, salida=2
+U05: entrada=4, salida=1
+U06: entrada=2, salida=1
+U07: entrada=2, salida=1
+U08: entrada=2, salida=1
+U09: entrada=1, salida=1
+U10: entrada=1, salida=1
+U11: entrada=0, salida=1
+U12: entrada=0, salida=0
+Sin seguidores: U11 (Karen), U12 (Luis)
+Aislados (entrada y salida 0): U12 (Luis)
+Influyentes (entrada máxima 4): U05 (Elena)
+Activos (salida máxima 4): U01 (Ana), U02 (Bruno)
+
+=== 2. Recorridos ===
+BFS desde U01: U01 -> U02 -> U03 -> U04 -> U05 -> U06 -> U07 -> U08 -> U09 -> U10 | alcanzados: 10 (incluye origen)
+BFS desde U11: U11 -> U02 -> U03 -> U04 -> U05 -> U06 -> U01 -> U07 -> U08 -> U09 -> U10 | alcanzados: 11 (incluye origen)
+BFS desde U12: U12 | alcanzados: 1 (incluye origen)
+DFS completo: U01 -> U02 -> U03 -> U07 -> U08 -> U09 -> U10 -> U05 -> U06 -> U04 -> U11 -> U12 | descubiertos: 12
+Ciclo detectado: U01 -> U02 -> U03 -> U01
+Ciclo detectado: U07 -> U08 -> U09 -> U10 -> U05 -> U06 -> U07
+
+=== 3. Consultas de alcanzabilidad ===
+¿U11 puede llegar a U10? Sí
+¿U01 puede llegar a U11? No
+¿U12 puede llegar a U01? No
+
+=== 4. CRUD y validaciones - estructura después de cada operación ===
+[OK] Usuario agregado: U13 (María, Estudiante).
+U01 | Ana | Estudiante -> [U02, U03, U04, U05]
+U02 | Bruno | Profesor -> [U03, U04, U05, U06]
+U03 | Camila | Egresado -> [U01, U07]
+U04 | Diego | Estudiante -> [U05, U08]
+U05 | Elena | Profesor -> [U06]
+U06 | Felipe | Egresado -> [U07]
+U07 | Gabriela | Estudiante -> [U08]
+U08 | Hugo | Profesor -> [U09]
+U09 | Isabel | Egresado -> [U10]
+U10 | Julián | Estudiante -> [U05]
+U11 | Karen | Profesor -> [U02]
+U12 | Luis | Egresado -> []
+U13 | María | Estudiante -> []
+[OK] Relación agregada: U13 -> U01.
+U01 | Ana | Estudiante -> [U02, U03, U04, U05]
+U02 | Bruno | Profesor -> [U03, U04, U05, U06]
+U03 | Camila | Egresado -> [U01, U07]
+U04 | Diego | Estudiante -> [U05, U08]
+U05 | Elena | Profesor -> [U06]
+U06 | Felipe | Egresado -> [U07]
+U07 | Gabriela | Estudiante -> [U08]
+U08 | Hugo | Profesor -> [U09]
+U09 | Isabel | Egresado -> [U10]
+U10 | Julián | Estudiante -> [U05]
+U11 | Karen | Profesor -> [U02]
+U12 | Luis | Egresado -> []
+U13 | María | Estudiante -> [U01]
+[OK] Relación agregada: U02 -> U13.
+U01 | Ana | Estudiante -> [U02, U03, U04, U05]
+U02 | Bruno | Profesor -> [U03, U04, U05, U06, U13]
+U03 | Camila | Egresado -> [U01, U07]
+U04 | Diego | Estudiante -> [U05, U08]
+U05 | Elena | Profesor -> [U06]
+U06 | Felipe | Egresado -> [U07]
+U07 | Gabriela | Estudiante -> [U08]
+U08 | Hugo | Profesor -> [U09]
+U09 | Isabel | Egresado -> [U10]
+U10 | Julián | Estudiante -> [U05]
+U11 | Karen | Profesor -> [U02]
+U12 | Luis | Egresado -> []
+U13 | María | Estudiante -> [U01]
+[OK] Usuario actualizado: U13 (María Torres, Egresado).
+U01 | Ana | Estudiante -> [U02, U03, U04, U05]
+U02 | Bruno | Profesor -> [U03, U04, U05, U06, U13]
+U03 | Camila | Egresado -> [U01, U07]
+U04 | Diego | Estudiante -> [U05, U08]
+U05 | Elena | Profesor -> [U06]
+U06 | Felipe | Egresado -> [U07]
+U07 | Gabriela | Estudiante -> [U08]
+U08 | Hugo | Profesor -> [U09]
+U09 | Isabel | Egresado -> [U10]
+U10 | Julián | Estudiante -> [U05]
+U11 | Karen | Profesor -> [U02]
+U12 | Luis | Egresado -> []
+U13 | María Torres | Egresado -> [U01]
+[OK] Relación eliminada: U13 -> U01.
+U01 | Ana | Estudiante -> [U02, U03, U04, U05]
+U02 | Bruno | Profesor -> [U03, U04, U05, U06, U13]
+U03 | Camila | Egresado -> [U01, U07]
+U04 | Diego | Estudiante -> [U05, U08]
+U05 | Elena | Profesor -> [U06]
+U06 | Felipe | Egresado -> [U07]
+U07 | Gabriela | Estudiante -> [U08]
+U08 | Hugo | Profesor -> [U09]
+U09 | Isabel | Egresado -> [U10]
+U10 | Julián | Estudiante -> [U05]
+U11 | Karen | Profesor -> [U02]
+U12 | Luis | Egresado -> []
+U13 | María Torres | Egresado -> []
+[OK] Usuario eliminado: U13; relaciones incidentes eliminadas: 1.
+U01 | Ana | Estudiante -> [U02, U03, U04, U05]
+U02 | Bruno | Profesor -> [U03, U04, U05, U06]
+U03 | Camila | Egresado -> [U01, U07]
+U04 | Diego | Estudiante -> [U05, U08]
+U05 | Elena | Profesor -> [U06]
+U06 | Felipe | Egresado -> [U07]
+U07 | Gabriela | Estudiante -> [U08]
+U08 | Hugo | Profesor -> [U09]
+U09 | Isabel | Egresado -> [U10]
+U10 | Julián | Estudiante -> [U05]
+U11 | Karen | Profesor -> [U02]
+U12 | Luis | Egresado -> []
+[RECHAZADO] Usuario duplicado: U01.
+U01 | Ana | Estudiante -> [U02, U03, U04, U05]
+U02 | Bruno | Profesor -> [U03, U04, U05, U06]
+U03 | Camila | Egresado -> [U01, U07]
+U04 | Diego | Estudiante -> [U05, U08]
+U05 | Elena | Profesor -> [U06]
+U06 | Felipe | Egresado -> [U07]
+U07 | Gabriela | Estudiante -> [U08]
+U08 | Hugo | Profesor -> [U09]
+U09 | Isabel | Egresado -> [U10]
+U10 | Julián | Estudiante -> [U05]
+U11 | Karen | Profesor -> [U02]
+U12 | Luis | Egresado -> []
+[RECHAZADO] Relación duplicada: U01 -> U02.
+U01 | Ana | Estudiante -> [U02, U03, U04, U05]
+U02 | Bruno | Profesor -> [U03, U04, U05, U06]
+U03 | Camila | Egresado -> [U01, U07]
+U04 | Diego | Estudiante -> [U05, U08]
+U05 | Elena | Profesor -> [U06]
+U06 | Felipe | Egresado -> [U07]
+U07 | Gabriela | Estudiante -> [U08]
+U08 | Hugo | Profesor -> [U09]
+U09 | Isabel | Egresado -> [U10]
+U10 | Julián | Estudiante -> [U05]
+U11 | Karen | Profesor -> [U02]
+U12 | Luis | Egresado -> []
+[RECHAZADO] Ambos usuarios deben existir.
+U01 | Ana | Estudiante -> [U02, U03, U04, U05]
+U02 | Bruno | Profesor -> [U03, U04, U05, U06]
+U03 | Camila | Egresado -> [U01, U07]
+U04 | Diego | Estudiante -> [U05, U08]
+U05 | Elena | Profesor -> [U06]
+U06 | Felipe | Egresado -> [U07]
+U07 | Gabriela | Estudiante -> [U08]
+U08 | Hugo | Profesor -> [U09]
+U09 | Isabel | Egresado -> [U10]
+U10 | Julián | Estudiante -> [U05]
+U11 | Karen | Profesor -> [U02]
+U12 | Luis | Egresado -> []
+
+=== 5. Estructura y métricas finales ===
+U01 | Ana | Estudiante -> [U02, U03, U04, U05]
+U02 | Bruno | Profesor -> [U03, U04, U05, U06]
+U03 | Camila | Egresado -> [U01, U07]
+U04 | Diego | Estudiante -> [U05, U08]
+U05 | Elena | Profesor -> [U06]
+U06 | Felipe | Egresado -> [U07]
+U07 | Gabriela | Estudiante -> [U08]
+U08 | Hugo | Profesor -> [U09]
+U09 | Isabel | Egresado -> [U10]
+U10 | Julián | Estudiante -> [U05]
+U11 | Karen | Profesor -> [U02]
+U12 | Luis | Egresado -> []
+Vértices: 12; aristas: 19; densidad dirigida: 0,1439
+U01: entrada=1, salida=4
+U02: entrada=2, salida=4
+U03: entrada=2, salida=2
+U04: entrada=2, salida=2
+U05: entrada=4, salida=1
+U06: entrada=2, salida=1
+U07: entrada=2, salida=1
+U08: entrada=2, salida=1
+U09: entrada=1, salida=1
+U10: entrada=1, salida=1
+U11: entrada=0, salida=1
+U12: entrada=0, salida=0
+Sin seguidores: U11 (Karen), U12 (Luis)
+Aislados (entrada y salida 0): U12 (Luis)
+Influyentes (entrada máxima 4): U05 (Elena)
+Activos (salida máxima 4): U01 (Ana), U02 (Bruno)
+DFS completo: U01 -> U02 -> U03 -> U07 -> U08 -> U09 -> U10 -> U05 -> U06 -> U04 -> U11 -> U12 | descubiertos: 12
+Ciclo detectado: U01 -> U02 -> U03 -> U01
+Ciclo detectado: U07 -> U08 -> U09 -> U10 -> U05 -> U06 -> U07
+Análisis: las operaciones temporales restauraron las 19 relaciones y los 12 usuarios iniciales.
+U01 y U02 siguen a 4 usuarios cada uno. U05 recibe 4 seguimientos y tiene el mayor grado de entrada.
+U11 no tiene seguidores, pero sigue a U02: no es aislado. U12 sí es aislado y su BFS solo alcanza su origen.
+El ciclo U01 -> U02 -> U03 -> U01 impide un orden topológico. La red no es fuertemente conexa.
+La influencia se mide aquí solo por seguidores; no implica prestigio ni calidad académica.

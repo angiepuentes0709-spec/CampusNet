@@ -1,0 +1,16 @@
+Salida de la ejecución de CampusNet.Pruebas.dll con .NET SDK 8.0.427
+1 de noviembre de 2026
+
+[OK] Validación y duplicados de usuarios
+[OK] Relaciones dirigidas, duplicados y extremos
+[OK] BFS por niveles y sin repetir en ciclo
+[OK] DFS completo y ciclo real
+[OK] DFS no confunde arista a nodo terminado con ciclo
+[OK] Actualizar conserva Id y relaciones; rechazos atómicos
+[OK] Eliminar usuario limpia aristas entrantes y salientes
+[OK] Métricas, empates, sin seguidores y aislados
+[OK] Grafo vacío y usuarios aislados
+[OK] Las consultas no exponen listas internas modificables
+[OK] Modelo no escribe en consola
+[OK] Demostración completa y requisitos de construcción
+Resultado: 12/12 pruebas aprobadas.
